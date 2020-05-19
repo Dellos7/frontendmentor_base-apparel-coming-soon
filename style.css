@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --rosa:  hsl(0, 36%, 70%);
+    --rosa-alpha: hsla(0, 36%, 70%, 60%);
+    --rojo: hsl(0, 93%, 68%);
+    --negro: hsl(0, 6%, 24%);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.6rem;
+    min-height: 100vh;
+    background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%));
+}
+
+main{
+    min-height: 100vh;
+}
+
+section.form{
+    margin: 10%;
+}
+
+.logo{
+    height: 10rem;
+    background: url(./images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+}
+
+.img-mobile{
+    background: url(./images/hero-mobile.jpg);
+    padding-top: 56.25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1.title{
+    margin-top: 6rem;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+h1.title span{
+    display: block;
+    letter-spacing: 1rem;
+    margin-top: .5rem;
+}
+
+h1.title .title__first{
+    color: var(--rosa);
+    font-weight: 200;
+}
+
+.description{
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--rosa);
+    line-height: 2.5rem;
+}
+
+form{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+form input{
+    width: 100%;
+    height: 4rem;
+    background: transparent;
+    border-radius: 10rem;
+    border: .5px solid var(--rosa-alpha);
+    padding: 2.5rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: var(--negro);
+    transition: all .1s linear;
+}
+
+form input:focus{
+    outline: none;
+}
+
+form input::placeholder{
+    color: var(--rosa-alpha);
+}
+
+form input.invalid{
+    border: 2px solid var(--rojo);
+}
+
+form button{
+    width: 25%;
+    max-width: 10rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    /* background: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%), url(./images/icon-arrow.svg); */
+    background: url(./images/icon-arrow.svg), linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%), url(./images/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 1.2rem, contain;
+    background-position: 50% 50%;
+    border-radius: 10rem;
+    transition: all .5s linear;
+}
+
+form button.invalid::before{
+    content: "";
+    position: absolute;
+    left: -50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: url(./images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 50%;
+}
+
+form button:focus{
+    outline: none;
+}
+
+form button:active{
+    border: none;
+    
+}
+
+.form-feedback{
+    color: var(--rojo);
+    opacity: 1;
+    transition: opacity .3s linear;
+    padding-left: 2.5rem;
+}
+
+.form-feedback.oculto{
+    opacity: 0;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+/* Desktop */
+@media all and ( min-width: 700px ){
+    main{
+        background: url(./images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 60%;
+    }
+    main::before{
+        content: "";
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        background: url(./images/hero-desktop.jpg);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+    section.form{
+        max-width: 50rem;
+    }
+
+    .logo{
+        background-position: 10rem 100%;
+    }
+
+    .img-mobile{
+        display: none;
+    }
+
+    h1.title{
+        margin-top: 8rem;
+        font-size: 6rem;
+        /* margin-left: 10rem;
+        margin-right: 10rem; */
+        text-align: left;
+    }
+
+    .description{
+        font-size: 2rem;
+        /* margin-left: 10rem;
+        margin-right: 10rem; */
+        margin: 2rem 0;
+        text-align: left;
+    }
+
+    form input{
+        font-size: 1.8rem;
+        height: 6rem;
+    }
+}
+
+/* Button form submit animation */
+@keyframes goBackwards{
+    10%{
+        transform: translateX(3rem);
+    }
+
+    65%{
+        opacity: 1;
+    }
+    70%{
+        transform: translateX(-500%);
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+        transform: translateX(3rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <section class="logo"></section>
+    <section class="img-mobile"></section>
+    <section class="form">
+        <h1 class="title">
+          <span class="title__first">We're</span>
+          <span class="title__second">coming</span>
+          <span class="title__second">soon</span>
+        </h1>
+        <p class="description">
+          Hello fellow shoppers! We're currently building our new fashion store. 
+          Add your email below to stay up-to-date with announcements and our launch deals.
+        </p>
+        <form onsubmit="return validateForm(this);">
+          <input name="email" type="text" placeholder="Email Address">
+          <button type="submit"></button>
+        </form>
+        <div class="form-feedback oculto">
+          Please provide a valid email
+        </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://dlopezcastellote.dev">David López Castellote</a>.
+    </p>
+  </footer>
+  <script type="text/javascript" src="validate.js"></script>
+</body>
+</html>
